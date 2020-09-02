@@ -1,12 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+// import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import {RoomProvider, RoomContext} from './Context'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <RoomProvider>
+    <Router>
+      <App />
+    </Router>
+    </RoomProvider>
+    
+    
   </React.StrictMode>,
   document.getElementById('root')
 );
